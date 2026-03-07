@@ -25,7 +25,7 @@ This script needs bash installed in ADM. The easiest way to install bash is to i
 ### Download the script
 
 1. Download the latest version _Source code (zip)_ from https://github.com/007revad/Asustor_SMART_info/releases
-2. Save the download zip file to a folder on the Synology.
+2. Save the download zip file to a folder on the Asustory.
 3. Unzip the zip file.
 
 ### To run the script via task scheduler
@@ -34,19 +34,35 @@ See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_i
 
 ### To run the script via SSH
 
-[How to enable SSH in ADM](https://www.asustor.com/en/online/online_help?id=24))
+[How to enable SSH in ADM](https://www.asustor.com/en/online/online_help?id=24)
 
 ```YAML
 sudo -s /volume1/scripts/asustor_smart_info.sh
 ```
 
-**Note:** Replace /volume1/scripts/ with the path to where the script is located.
+> **Note** <br>
+> Replace /volume1/scripts/ with the path to where the script is located.
+
+To see all the SMART attributes run the script with the `-a` or `--all` option:
+
+```bash
+sudo -s /volume1/scripts/asustor_smart_info.sh --all
+```
+
+> **Note** <br>
+> The script automatically shows all SMART attributes for any drives that don't return "SMART test passed".
+
+To see only important SMART attributes that have changed since you last ran the script run the script with the `-i` or `--increased` option:
+
+```bash
+sudo -s /volume1/scripts/asustor_smart_info.sh -i
+```
 
 ### Troubleshooting
 
 If the script won't run check the following:
 
-1. Make sure you download the zip file and unzipped it to a folder on your Synology (not on your computer).
+1. Make sure you download the zip file and unzipped it to a folder on your Asustory (not on your computer).
 2. If the path to the script contains any spaces you need to enclose the path/scriptname in double quotes:
    ```YAML
    sudo -s "/volume1/my scripts/asustor_smart_info.sh"
