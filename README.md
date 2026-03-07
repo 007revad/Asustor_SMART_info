@@ -8,9 +8,16 @@
 
 ### Description
 
-Show Synology smart test progress or smart health and attributes. Can also email you when important values change.
+Show Asustor drive's smart health and attributes. Can also email you when important values change.
 
 The script works in ADM 5 and ADM 4.
+
+### Requirements
+
+This script needs bash installed in ADM. The easiest way to install bash is to install the Netdata app in App Central as it includes bash.
+
+<p align="center">Install Netdata app</p>
+<p align="center"><img src="/images/netdata.png"></p>
 
 ### Download the script
 
@@ -24,7 +31,7 @@ See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_i
 
 ### To run the script via SSH
 
-[How to enable SSH and login to DSM via SSH](https://kb.synology.com/en-global/DSM/tutorial/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet)
+[How to enable SSH in ADM](https://www.asustor.com/en/online/online_help?id=24))
 
 ```YAML
 sudo -s /volume1/scripts/asustor_smart_info.sh
