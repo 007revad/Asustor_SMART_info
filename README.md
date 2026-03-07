@@ -90,10 +90,10 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<!--- <p align="center">Description of image 1 goes here</p> --->
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<p align="center">HDDs and NVMe drives</p>
+<p align="center"><img src="/images/nimbustor2.png"></p>
 
 <br>
 
-<!--- <p align="center">Description of image 2 goes here</p> --->
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<p align="center">Drives with issues</p>
+<p align="center"><img src="/images/nimbustor.png"></p>
