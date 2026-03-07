@@ -16,8 +16,11 @@ The script works in ADM 5 and ADM 4.
 
 This script needs bash installed in ADM. The easiest way to install bash is to install the Netdata app in App Central as it includes bash.
 
-<p align="center">Install Netdata app</p>
-<p align="center"><img src="/images/netdata.png"></p>
+<p align="left">Install Netdata app</p>
+<p align="left"><img src="/images/install_netdata.png"></p>
+
+<p align="left">Leave Enable port fowarding UNTICKED</p>
+<p align="left"><img src="/images/leave_unticked.png"></p>
 
 ### Download the script
 
