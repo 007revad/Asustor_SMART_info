@@ -16,11 +16,11 @@ The script works in ADM 5 and ADM 4.
 
 This script needs bash installed in ADM. The easiest way to install bash is to install the Netdata app in App Central as it includes bash.
 
-<p align="left">Install Netdata app</p>
-<p align="left"><img src="/images/install_netdata.png"></p>
+<p align="center">Install Netdata app</p>
+<p align="center"><img src="/images/install_netdata.png"></p>
 
-<p align="left">Leave Enable port fowarding UNTICKED</p>
-<p align="left"><img src="/images/leave_unticked.png"></p>
+<p align="center">Leave Enable port fowarding UNTICKED</p>
+<p align="center"><img src="/images/leave_unticked.png"></p>
 
 ### Download the script
 
@@ -70,14 +70,14 @@ sudo -s /volume1/scripts/asustor_smart_info.sh -i
 
 See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_info/blob/main/how_to_run_from_scheduler.md)
 
-<p align="left">Sample email when a driive's important SMART attributes have changed</p>
+<p align="center">Sample email when a driive's important SMART attributes have changed</p>
 <p align="center"><img src="/images/email.png"></p>
 
 ### Troubleshooting
 
 If the script won't run check the following:
 
-1. Make sure you download the zip file and unzipped it to a folder on your Asustory (not on your computer).
+1. Make sure you download the zip file and unzipped it to a folder on your Asustor (not on your computer).
 2. If the path to the script contains any spaces you need to enclose the path/scriptname in double quotes:
    ```YAML
    sudo -s "/volume1/my scripts/asustor_smart_info.sh"
