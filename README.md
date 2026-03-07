@@ -90,7 +90,7 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<p align="center">HDD, NVMe and USB SSD</p>
+<p align="center">HDD, USB SSD and NVMe drive</p>
 <p align="center"><img src="/images/nimbustor_gen2.png"></p>
 
 <br>
