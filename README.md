@@ -70,8 +70,8 @@ sudo -s /volume1/scripts/asustor_smart_info.sh -i
 
 See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_info/blob/main/how_to_run_from_scheduler.md)
 
-<p align="leftr">Sample email when a driive's important SMART attributes have changed</p>
-<p align="left"><img src="/images/email.png"></p>
+<p align="left">Sample email when a driive's important SMART attributes have changed</p>
+<p align="center"><img src="/images/email.png"></p>
 
 ### Troubleshooting
 
