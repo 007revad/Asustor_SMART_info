@@ -28,9 +28,17 @@ This script needs bash installed in ADM. The easiest way to install bash is to i
 2. Save the download zip file to a folder on the Asustory.
 3. Unzip the zip file.
 
-### To run the script via task scheduler
+### Options when running the script <a name="options"></a>
 
-See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_info/blob/main/how_to_run_from_scheduler.md)
+There are optional flags you can use when running the script:
+```YAML
+  -a, --all             Show all SMART attributes
+  -e, --email           Disable colored text in output scheduler emails
+  -i, --increased       Only show important attributes that have increased
+  -u, --update          Update the script to the latest version
+  -h, --help            Show this help message
+  -v, --version         Show the script version
+```
 
 ### To run the script via SSH
 
@@ -57,6 +65,13 @@ To see only important SMART attributes that have changed since you last ran the 
 ```bash
 sudo -s /volume1/scripts/asustor_smart_info.sh -i
 ```
+
+### To run the script via task scheduler
+
+See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_info/blob/main/how_to_run_from_scheduler.md)
+
+<p align="leftr">Sample email when a driive's important SMART attributes have changed</p>
+<p align="left"><img src="/images/email.png"></p>
 
 ### Troubleshooting
 
