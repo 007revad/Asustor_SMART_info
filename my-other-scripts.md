@@ -5,6 +5,7 @@
 
 #### Contents
 - [Plex](#plex)
+- [Asustor scripts](#asustor)
 - [Synology docker](#synology-docker)
 - [Synology recovery](#synology-recovery)
 - [Other Synology scripts](#other-synology-scripts)
@@ -14,6 +15,14 @@
 - [Synology dev](#synology-dev)
 
 ***
+
+### Asustor
+
+- **<a href="https://github.com/007revad/Asustor_SMART_info">Asustor SMART info</a>**
+  - Show Asustor smart health and attributes. Can also email you when important values change.
+
+- **<a href="https://github.com/007revad/Asustor_Plex_Backup">Asustor Plex Backup</a>**
+  - Backup your Asustor's Plex Media Server settings and database.
 
 ### Plex
 
@@ -38,13 +47,13 @@
 - **<a href="https://github.com/007revad/Synology_Docker_Export">Synology Docker export</a>**
   - Export all Synology Container Manager or Docker containers' settings as json files to your docker shared folder.
 
-- **<a href="https://github.com/007revad/Synology_ContainerManager_IPv6">Synology ContainerManager IPv6</a>**
+- **<a href="https://github.com/007revad/Synology_ContainerManager_IPv6">Synology Container Manager IPv6</a>**
   - Enable IPv6 for Container Manager's bridge network.
 
-- **<a href="https://github.com/007revad/ContainerManager_for_all_armv8">ContainerManager for all armv8</a>**
+- **<a href="https://github.com/007revad/ContainerManager_for_all_armv8">Container Manager for all armv8</a>**
   - Script to install Container Manager on a RS819, DS119j, DS418, DS418j, DS218, DS218play or DS118.
  
-- **<a href="https://github.com/007revad/Docker_Autocompose">Docker Autocompose</a>**
+- **<a href="https://github.com/007revad/Docker_Autocompose">Docker Auto compose</a>**
   - Create .yml files from your docker existing containers.
 
 - **<a href="https://github.com/007revad/Synology_docker_cleanup">Synology docker cleanup</a>**
@@ -92,7 +101,7 @@
   - Get and log Synology NAS CPU temperature via SSH.
 
 - **<a href="https://github.com/007revad/Synology_SMART_info">Synology SMART info</a>**
-  - Show Synology smart test progress or smart health and attributes.
+  - Show Synology smart test progress or smart health and attributes. Can also email you when important values change.
 
 - **<a href="https://github.com/007revad/Synology_Cleanup_Coredumps">Synology Cleanup Coredumps</a>**
   - Cleanup memory core dumps from crashed processes.
@@ -103,11 +112,14 @@
 - **<a href="https://github.com/007revad/Synology_Download_Station_Chrome_Extension">Synology Download Station Chrome Extension</a>**
   - Download Station Chrome Extension.
  
-- **<a href="https://github.com/007revad/Seagate_lowCurrentSpinup">Seagate lowCurrentSpinup</a>**
+- **<a href="https://github.com/007revad/Seagate_lowCurrentSpinup">Seagate low Current Spinup</a>**
   - This script avoids the need to buy and install a higher wattage power supply when using multiple large Seagate SATA HDDs.
  
 - **<a href="https://github.com/007revad/Synology_created_date">Synology created date</a>**
   - Script to show you the created year and month of your Synology NAS or expansion unit.
+  
+  - **<a href="https://github.com/007revad/Restore_RS3621_Fan_Speed">Restore RS3621 Fan Speed</a>**
+  - Script to restore RS3621xs+ and RS3621RPxs Quiet mode and Cool mode fan speeds back to how it was before DSM 7.3.2.
 
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Back to Contents](#contents)
 
@@ -145,7 +157,7 @@
 
 ### 2025 plus models
 
-- **<a href="https://github.com/007revad/Transcode_for_x25">Transcode_for_x25</a>**
+- **<a href="https://github.com/007revad/Transcode_for_x25">Transcode for x25</a>**
   - Installs the modules needed for Plex or Jellyfin hardware transcoding in DS425+ and DS225+.
 
 - **<a href="https://github.com/007revad/Synology_HDD_db/blob/main/2025_plus_models.md">2025 series or later Plus models</a>**
@@ -177,7 +189,7 @@
 - **<a href="https://github.com/007revad/ScriptNotify">ScriptNotify</a>**
   - DSM 7 package to allow your scripts to send DSM notifications.
 
-- **<a href="https://github.com/007revad/DTC_GUI_for_Windows">DTC_GUI_for_Windows</a>**
+- **<a href="https://github.com/007revad/DTC_GUI_for_Windows">DTC GUI for Windows</a>**
   - GUI for DTC.exe for Windows.
 
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Back to Contents](#contents)
