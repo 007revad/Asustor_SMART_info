@@ -95,5 +95,5 @@ If the script won't run check the following:
 
 <br>
 
-<p align="center">Drives with issues</p>
+<p align="center">Drives with issues in red</p>
 <p align="center"><img src="/images/nimbustor.png"></p>
