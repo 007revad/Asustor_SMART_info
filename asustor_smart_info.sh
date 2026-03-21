@@ -44,11 +44,6 @@ client="/usr/builtin/bin/msmtp"
 
 #--------------------------------------------------------------------------------
 
-# Attribute ID: 191
-# Attribute Name: G-sense error rate
-# Description: This value tracks errors resulting from external shock or vibration.
-# Other names: G-Sense Error Rate, Shock Sense 
-
 scriptver="v1.4.40"
 script=Asustor_SMART_info
 # shellcheck disable=SC2034
@@ -412,10 +407,6 @@ get_drive_num(){
     #order=$(get_section_key_value /etc/nas.conf [Disk] Order)
     order=$(confutil -get /etc/nas.conf Disk Order)
 
-#echo -e "\nDEBUG qty: $qty"  # debug ##################################
-#echo "DEBUG order: $order"   # debug ##################################
-#echo "DEBUG 1: $1"           # debug ##################################
-
     if is_usb "$drive"; then
         disk_id=$(get_usb_port_number "$drive")
         #drive_num="USB Drive $disk_id  "
@@ -445,9 +436,6 @@ get_drive_num(){
     #else
     #    drive_order+=()
     #fi
-
-#echo -e "\nSupported Drives: $qty"  # debug ##################################
-#echo "Drive Order: $order"          # debug ##################################
 
 #    # Convert order to an array
 #    IFS=',' read -ra order_arr <<< "$order"
@@ -533,12 +521,8 @@ log_drive(){
         echo -e "\n[${serial}]\ndrive_num=" >> "$smart_log"
         first_run="yes"
     fi
-#echo "debug: line 388"  # debug ##################################
     set_section_key_value "$smart_log" "$1" drive_num "$2"
-#echo "debug: line 390"  # debug ##################################
     set_section_key_value "$smart_log" "$1" model "$3"
-#echo "debug: line 392"  # debug ##################################
-#echo "debug: set_section_key_value $smart_log $1 device $4"  # debug ##########
     #set_section_key_value "$smart_log" "$1" device "$4"
     set_section_key_value "$smart_log" "$1" device "$(basename "$4")"
 }
@@ -831,14 +815,11 @@ log_bad(){
         if ! grep "$serial" "$smart_log" > /dev/null; then
             echo -e "[${serial}]\ndrive_num=" >> "$smart_log"
         fi
-#echo "debug line 726: $previous_att null"  # debug ##################################
         set_section_key_value "$smart_log" "$serial" "$var1_trimmed" "$var2"
     elif [[ $var2 -gt "$previous_att" ]]; then
-#echo "debug line 729: $var2 -gt $previous_att"  # debug ##################################
         set_section_key_value "$smart_log" "$serial" "$var1_trimmed" "$var2"
         show_increased=$'\\t'"Increased by $((var2 - previous_att))"
     elif [[ $var2 -lt "$previous_att" ]]; then
-#echo "debug line 732: $var2 -lt $previous_att"  # debug ##################################
         set_section_key_value "$smart_log" "$serial" "$var1_trimmed" "$var2"
         show_increased=$'\\t'"Decreased by $((previous_att - var2))"
     fi
@@ -866,14 +847,11 @@ log_bad_nvme(){
         if ! grep "$serial" "$smart_log" > /dev/null; then
             echo -e "[${serial}]\ndrive_num=" >> "$smart_log"
         fi
-#echo "debug line 759: $previous_att null"  # debug ##################################
         set_section_key_value "$smart_log" "$serial" "$var1_trimmed" "$var2"
     elif [[ $var2 -gt "$previous_att" ]]; then
-#echo "debug line 762: $var2 -gt $previous_att"  # debug ##################################
         set_section_key_value "$smart_log" "$serial" "$var1_trimmed" "$var2"
         show_increased=$'\\t'"Increased by $((var2 - previous_att))"
     elif [[ $var2 -lt "$previous_att" ]]; then
-#echo "debug line 766: $var2 -lt $previous_att"  # debug ##################################
         set_section_key_value "$smart_log" "$serial" "$var1_trimmed" "$var2"
         show_increased=$'\\t'"Decreased by $((previous_att - var2))"
     fi
@@ -1008,10 +986,6 @@ show_health(){
             errlog="$("$smartctl" -l error -d "$drive_type" /dev/"$drive" | grep -iE 'error count')"
             errcount="$(echo "$errlog" | awk '{print $4}')"
         fi
-
-
-#errcount=5  # debug #################################################
-
 
         if [[ -z $errcount ]]; then
             if [[ $increased != "yes" ]]; then
@@ -1409,14 +1383,6 @@ short_attibutes_nvme(){
         var3=$(echo "$4" | awk '{print $1}')            # name
         var4="$3"                                       # attribute number
 
-
-#echo -e "\ndebug 2:    $2"  # debug ##################################
-#echo "debug var1: $var1"    # debug ##################################
-#echo "debug var2: $var2"    # debug ##################################
-#echo "debug var3: $var3"    # debug ##################################
-#echo "debug var4: $var4"    # debug ##################################
-
-
         # Convert bitwise 0xNN to decmial
         if [[ $var2 =~ 0x[0-9][0-9] ]]; then
             dec=$((16#${var2#0x}))
@@ -1478,15 +1444,7 @@ show_health_nvme(){
 #    readarray -t smart_atts < <(nvme smart-log /dev/"$drive")
     readarray -t smart_atts <<< "$("$smartctl" -a /dev/"$drive")"
     for strIn in "${smart_atts[@]}"; do
-
-#if echo "$strIn" | grep -q ':'; then  # debug ########################
-#    echo "debug strIn: $strIn"        # debug ########################
-#fi                                    # debug ########################
-
         nvme_att="$(echo "$strIn" | cut -d":" -f1 | xargs)"
-
-#echo "debug nvme_att: $nvme_att"        # debug ########################
-
         if [[ $nvme_att == "Critical Warning" ]]; then
             # 1 Critical_Warning
             short_attibutes_nvme "Critical_Warning" zero "  1" "Critical_Warning            "
@@ -1807,9 +1765,6 @@ done
 
 # Sort NVMe devices by ADM drive number and PCIe M.2 Card model
 for drive in "${nvmes[@]}"; do
-
-#echo -e "\ndrive: $drive"  # debug #################################
-
     get_nvme_num "$drive"
     drive_number="$(echo "$drive_num" | xargs)"
 
@@ -1925,27 +1880,7 @@ if [[ $increased == "yes" ]]; then
     fi
 fi
 
-
-#echo -e "\ndebug start"          # debug ################################
-#for i in "${email_body[@]}"; do  # debug ################################
-#    echo -e "$i"                 # debug ################################
-#done                             # debug ################################
-#echo -e "debug end\n"            # debug ################################
-
-
-#echo -e "\nDEBUG increased:           $increased"
-#echo "DEBUG increased_count qty: ${#increased_count[@]}"
-#echo "DEBUG changed_atts qty:    ${#changed_atts[@]}"
-#for i in "${changed_atts[@]}"; do
-#echo "DEBUG: ${i}"
-#done
-#echo
-
-
 # Send email if any drives have changed important SMART values
-
-increased_count="1"  # DEBUG ##############################################
-
 if [[ $increased == "yes" && ${#increased_count[@]} -gt "0" ]]; then
     # Write email body file
     {
