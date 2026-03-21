@@ -98,8 +98,8 @@ Options:
   -a, --all             Show all SMART attributes
   -e, --email           Disable colored text in output scheduler emails
   -i, --increased       Only show important attributes that have increased
-      --schedule        Schedule script to run at N hours. Requires yes or no
-                        Hour is 0 to 23
+      --schedule        Schedule script to run at N hour each day.
+                        Hour is 0 to 23. Or 'no' to delete schedule.
                         --schedule=3
                         --schedule=no
   -u, --update          Update the script to the latest version
