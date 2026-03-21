@@ -35,6 +35,10 @@ There are optional flags you can use when running the script:
   -a, --all             Show all SMART attributes
   -e, --email           Disable colored text in output scheduler emails
   -i, --increased       Only show important attributes that have increased
+      --schedule        Schedule script to run at N hour each day.
+                        Hour is 0 to 23. Or 'no' to delete schedule.
+                        --schedule=3
+                        --schedule=no
   -u, --update          Update the script to the latest version
   -h, --help            Show this help message
   -v, --version         Show the script version
@@ -66,11 +70,21 @@ To see only important SMART attributes that have changed since you last ran the 
 sudo -s /volume1/scripts/asustor_smart_info.sh -i
 ```
 
-### To run the script via task scheduler
+### To run the script automatically on a schedule
 
-See [How to run from task scheduler](https://github.com/007revad/Asustor_SMART_info/blob/main/how_to_run_from_scheduler.md)
+You can schedule to script to run once per day and send an email if any drive's important SMART values have changed.
 
-<p align="center">Sample email when a driive's important SMART attributes have changed</p>
+To configure msmtp so the script can send emails edit the "Configuration Variables" at the top of msmtp_setup.sh then run: 
+```
+sudo -s /volume1/scripts/msmtp_setup.sh
+```
+
+Then to set a schedule to run `/volume1/scripts/asustor_smart_info.sh --increased` at 3 AM each day you'd run the following via SSH:
+```
+sudo -s /volume1/scripts/asustor_smart_info.sh --increased --schedule=3
+```
+
+<p align="center">Sample email when a drive's important SMART attributes have changed</p>
 <p align="center"><img src="/images/email.png"></p>
 
 ### Troubleshooting
