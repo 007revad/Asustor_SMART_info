@@ -10,6 +10,8 @@
 
 Show Asustor drive's smart health and attributes. Can also email you when important values change.
 
+It also decodes Seagate HDD SMART values for attributes 1, 7, 195 and 240.
+
 The script works in ADM 5 and ADM 4.
 
 ### Requirements
